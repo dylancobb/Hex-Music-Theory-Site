@@ -112,9 +112,12 @@ footer {
 
 .navbar a:hover,
 .dropdown-toggle:hover,
-.dropdown-toggle:hover>a,
-.dropdown-toggle:hover>.chevron {
+.dropdown-toggle:hover>a {
     background-color: #F1C6CA !important;
+    color: black !important;
+}
+
+.dropdown-toggle:hover>.chevron {
     color: black !important;
 }
 
@@ -124,9 +127,12 @@ footer {
 
 .navbar a:active,
 .dropdown-toggle:active,
-.dropdown-toggle:active>a,
-.dropdown-toggle:active>.chevron {
+.dropdown-toggle:active>a {
     background-color: #E28D95 !important;
+    color: white !important;
+}
+
+.dropdown-toggle:active>.chevron {
     color: white !important;
 }
 
