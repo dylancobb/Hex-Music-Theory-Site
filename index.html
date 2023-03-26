@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Basic Metadata -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hex Music Theory</title>
+	<meta name="description" content="Music theory made accessible.">
+	<meta name="author" content="Hex">
+	<!-- Favicons and Touch Icons -->
+	<link rel="icon" href="images/favicon.ico">
+	<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<!-- Stylesheets and Scripts -->
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans:400,500">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Code Pro">
+</head>
+
+<body>
+	<div id="tinter" onclick="toggleMenu()"></div>
+	<nav class="navbar" id="nav-mobile">
+		<a id="menu-icon" onclick="toggleMenu()">
+			<div class="bar1"></div>
+			<div class="bar2"></div>
+			<div class="bar3"></div>
+		</a>
+		<img src="images/logo.svg" class="logo" />
+	</nav>
+	<nav class="navbar" id="nav-desktop">
+		<img src="images/logo.svg" class="logo" />
+		<a href="#" onclick="closeMenu()">
+			<span class="current">Home</span>
+		</a>
+		<a href="#about" onclick="closeMenu()">Blog</a>
+		<div class="dropdown">
+			<div class="dropdown-toggle">
+				<a href="#learning">Resources
+					<!-- dropdown caret (desktop display) -->
+					<svg width="12" height="6" version="1.1" viewBox="0 0 12 6" xmlns="http://www.w3.org/2000/svg"
+						class="caret">
+						<path d="m0 0 6 6 6-6z" fill="currentColor" />
+					</svg>
+				</a>
+				<!-- dropdown chevron (mobile display) -->
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+					stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+					class="chevron">
+					<polyline points="9 18 15 12 9 6"></polyline>
+				</svg>
+			</div>
+			<div class="dropdown-content">
+				<div class="dropdown-guard"></div>
+				<div class="dropdown-links">
+					<a href="#">Books</a>
+					<a href="#">Roadmap</a>
+					<a href="#">Reading List</a>
+					<a href="#">Melody, Voice Leading</a>
+					<a href="#">Form in Popular Music</a>
+					<a href="#">Musical Analyses</a>
+					<a href="#">Complex Counterpoint</a>
+				</div>
+			</div>
+		</div>
+		<div class="dropdown">
+			<div class="dropdown-toggle">
+				<a href="#projects">Tools
+					<!-- dropdown caret (desktop display) -->
+					<svg width="12" height="6" version="1.1" viewBox="0 0 12 6" xmlns="http://www.w3.org/2000/svg"
+						class="caret">
+						<path d="m0 0 6 6 6-6z" fill="currentColor" />
+					</svg>
+				</a>
+				<!-- dropdown chevron (mobile display) -->
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+					stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+					class="chevron">
+					<polyline points="9 18 15 12 9 6"></polyline>
+				</svg>
+			</div>
+			<div class="dropdown-content">
+				<div class="dropdown-guard"></div>
+				<div class="dropdown-links">
+					<a href="#">Shifting Counterpoint Calculator</a>
+					<a href="#">2x2 Canons App</a>
+					<a href="#">3x3 Canons App</a>
+					<a href="#">4x4 Canons App</a>
+				</div>
+			</div>
+		</div>
+		<a href="#projects" onclick="closeMenu()">Store</a>
+		<a href="#projects" onclick="closeMenu()">Contact</a>
+	</nav>
+	<header>
+		<h1 id="page-title">
+			Music Theory
+			<p class="subtitle">made accessible.</p>
+		</h1>
+	</header>
+	<main>
+		<!-- Further subdivide into sections -->
+		<section id="home">
+			<h2 class="section-title">Stuff About Gusic</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum, nisi eget venenatis varius,
+				turpis eros suscipit elit, eget vestibulum libero lacus id ex. Ut sollicitudin tempor turpis sit amet
+				cursus. Curabitur ac enim et ante pharetra finibus et quis metus. Suspendisse potenti. Proin
+				sollicitudin ullamcorper viverra. Sed lacinia eget mauris nec facilisis. Quisque augue ligula,
+				condimentum sed tellus sed, ullamcorper pharetra lorem. Sed hendrerit, sapien in varius aliquet, arcu
+				sapien rhoncus ipsum, vel condimentum velit felis eget ipsum. Vestibulum fringilla dolor in tortor
+				consectetur, nec pharetra neque interdum. Pellentesque habitant morbi tristique senectus et netus et
+				malesuada fames ac turpis egestas. Pellentesque viverra molestie felis vel consectetur. Ut sit amet ex
+				vitae purus facilisis sodales.
+			</p>
+		</section>
+		<section id="about">
+			<h2 class="section-title">More Gusic Stuff</h2>
+			<p>Sed at justo elit. Mauris ultricies a nisl facilisis efficitur. Nullam venenatis, dui ac scelerisque
+				semper, tortor massa egestas lorem, vitae dictum ipsum lorem a turpis. Morbi sagittis elementum neque
+				non consectetur. Maecenas eu pellentesque ante. Integer efficitur elit vel sem auctor efficitur. Etiam
+				aliquam urna in fringilla accumsan. Mauris ut aliquam magna. Aenean at nulla quis sapien consequat
+				faucibus. Curabitur tristique ornare eros sed consequat. Aenean id lorem est. Curabitur quis tristique
+				urna. Donec condimentum vehicula felis vitae mattis. In risus ligula, pulvinar eget massa id, cursus
+				ornare nibh. Donec consectetur urna consequat ipsum cursus, nec gravida purus convallis. Sed tellus
+				ligula, facilisis vitae rhoncus sit amet, efficitur tincidunt nulla.
+			</p>
+		</section>
+		<section id="learning">
+			<h2 class="section-title">93% Of Experts Agree: Gusic</h2>
+			<p>Etiam et velit id erat tempus congue. Pellentesque mattis ac mauris vel tristique. Sed luctus consectetur
+				dui, vitae rhoncus urna. Ut sagittis viverra lectus, ac convallis tellus iaculis ac. Phasellus placerat
+				augue laoreet, varius turpis at, finibus ante. Phasellus felis ante, vulputate eget sollicitudin
+				pharetra, tempor in libero. Cras ante mauris, maximus sed lorem nec, lobortis venenatis turpis. Praesent
+				magna libero, malesuada sed elit sed, placerat aliquam tortor. Nulla efficitur, magna nec auctor
+				laoreet, justo est tristique lectus, at facilisis nisl justo eu ligula. Pellentesque habitant morbi
+				tristique senectus et netus et malesuada fames ac turpis egestas. Etiam dapibus eu ex vitae fermentum.
+				Nullam sagittis dapibus risus. Aenean consectetur bibendum feugiat.
+			</p>
+		</section>
+		<section id="projects">
+			<h2 class="section-title">Gusic</h2>
+			<p>Suspendisse potenti. In commodo lectus rhoncus porta finibus. Ut urna tortor, luctus a blandit et, mattis
+				vitae felis. Curabitur quis semper mauris, sed luctus dolor. Donec ut felis nibh. Curabitur eu dictum
+				sapien. Pellentesque et elit augue. Aliquam a volutpat ligula. Pellentesque cursus aliquam risus in
+				mollis.
+			</p>
+		</section>
+	</main>
+	<footer>
+		<p>Gusic 🤓</p>
+	</footer>
+
+	<script src="scripts.js"></script>
+</body>
+
+</html>

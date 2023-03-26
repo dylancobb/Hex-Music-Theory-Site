@@ -1,0 +1,489 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-weight: normal;
+    font-size: medium;
+    cursor: default;
+    margin: 0;
+    padding: 0;
+}
+
+code {
+    font-family: "Source Code Pro", monospace;
+}
+
+/***************************
+ * NAVBAR + FOOTER STYLING *===================================================
+ ***************************/
+
+#nav-mobile {
+    height: 55px;
+    display: none;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 21px;
+    height: 2px;
+    background-color: white;
+    margin: 4px 0;
+    border-radius: 1px;
+    transition: transform 0.2s;
+}
+
+#menu-icon:hover .bar1,
+#menu-icon:hover .bar2,
+#menu-icon:hover .bar3 {
+    vertical-align: middle;
+    background-color: black;
+}
+
+#menu-icon:active .bar1,
+#menu-icon:active .bar2,
+#menu-icon:active .bar3 {
+    vertical-align: middle;
+    background-color: white;
+}
+
+.change .bar1 {
+    transform: translate(0, 6px) rotate(-45deg);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: translate(0, -6px) rotate(45deg);
+}
+
+.navbar {
+    background-color: #BB2F3D;
+    margin: 0;
+    padding: 5px;
+    width: 100%;
+    height: 55px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    border-bottom: 2px solid #ccc;
+    transition: 0.2s;
+    z-index: 99;
+}
+
+footer {
+    background-color: #BB2F3D;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 5px;
+    width: 100%;
+    border-top: 2px solid #ccc;
+}
+
+.logo {
+    height: 40px;
+    margin: 0px 20px 0px 5px;
+}
+
+.navbar a {
+    padding: 10px 12px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    z-index: 100;
+}
+
+.navbar a .current {
+    padding-bottom: 3px;
+    border-bottom: 2px solid white;
+}
+
+.navbar a:hover,
+.dropdown-toggle:hover,
+.dropdown-toggle:hover>a,
+.dropdown-toggle:hover>.chevron {
+    background-color: #F1C6CA !important;
+    color: black !important;
+}
+
+.navbar a:hover .current {
+    border-color: black;
+}
+
+.navbar a:active,
+.dropdown-toggle:active,
+.dropdown-toggle:active>a,
+.dropdown-toggle:active>.chevron {
+    background-color: #E28D95 !important;
+    color: white !important;
+}
+
+.navbar a:active .current {
+    border-color: white;
+}
+
+.caret,
+.chevron {
+    vertical-align: middle;
+}
+
+.chevron {
+    display: none;
+    color: white;
+}
+
+.dropdown-toggle {
+    margin: 0;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+
+.dropdown-guard {
+    background-color: rgba(0, 0, 0, 0);
+    height: 9px;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 46px;
+    background-color: rgba(0, 0, 0, 0);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.dropdown-links {
+    background-color: white;
+    padding: 8px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 8px 16px;
+    display: block;
+}
+
+#tinter {
+    background-color: #000000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    transition: 0.5s;
+}
+
+/******************
+ * HEADER STYLING *============================================================
+ ******************/
+
+#page-title {
+    text-align: center;
+    font-size: 72pt;
+    padding: 100px 0px 0px 0px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 28pt;
+    margin: 0 0 0 0px;
+}
+
+/*******************
+ * SECTION STYLING *===========================================================
+ *******************/
+
+.section-title {
+    margin: 35px 15vw;
+    font-size: 24pt;
+}
+
+section:before {
+    height: 40px;
+    content: "";
+    display: block;
+}
+
+section p:last-of-type {
+    margin-bottom: -40px;
+}
+
+#projects p:last-of-type {
+    margin-bottom: 0px;
+    padding-bottom: 40px;
+}
+
+p,
+ul {
+    margin: 35px 15vw;
+    font-size: larger;
+    font-weight: normal;
+    line-height: 2rem;
+}
+
+/*************************
+ * PROJECT CARDS STYLING *=====================================================
+ *************************/
+
+.container {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: row wrap;
+    width: 85%;
+    padding-bottom: 40px;
+}
+
+.thumbnail,
+.thumbnail-pale {
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.thumbnail:hover {
+    filter: contrast(0.8) brightness(1.2);
+}
+
+.thumbnail-pale:hover {
+    filter: contrast(0.6) brightness(1.2);
+}
+
+.card {
+    background-color: #F1C6CA;
+    flex: 1;
+    border-radius: 4px;
+    padding: 1em;
+    margin: 1.5em;
+    min-width: 300px;
+    box-shadow: 5px 5px 5px #999;
+}
+
+.card-title {
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-title button {
+    display: inline-block;
+}
+
+.card p {
+    margin: 0 0 1rem 0;
+}
+
+.card a {
+    color: hsl(16, 100%, 32%);
+    font-weight: bold;
+}
+
+.card a:hover {
+    color: hsl(16, 100%, 50%);
+}
+
+.card a:active {
+    color: hsl(16, 100%, 62%);
+}
+
+button {
+    background-color: #666;
+    height: 40px;
+    width: 110px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: auto;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #999;
+}
+
+button:active {
+    background-color: #aaa;
+}
+
+a.git-link {
+    background-color: #666;
+    height: 40px;
+    padding: 7px;
+    width: 110px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: auto;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+a.git-link:hover {
+    background-color: #999;
+    color: white;
+}
+
+a.git-link:active {
+    background-color: #aaa;
+    color: white;
+}
+
+.card-text span {
+    margin-bottom: 1rem;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*****************
+ * MEDIA QUERIES *=============================================================
+ *****************/
+
+@media only screen and (min-width: 769px) {
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #nav-mobile {
+        display: flex;
+        justify-content: start;
+    }
+
+    #nav-desktop {
+        top: 55px;
+        display: none;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: start;
+        width: 300px;
+        height: calc(100% - 55px);
+    }
+
+    #nav-desktop .logo {
+        display: none;
+    }
+
+    #nav-desktop a {
+        text-align: left;
+        width: 100%;
+    }
+
+    .caret {
+        display: none;
+    }
+
+    .chevron {
+        display: block;
+        float: right;
+        transition: transform 0.2s;
+    }
+
+    .chevron-rotate {
+        transform: rotate(90deg);
+    }
+
+    .dropdown {
+        padding-bottom: 0px;
+        min-height: 42px;
+    }
+
+    .dropdown-guard {
+        height: 0px;
+    }
+
+    .dropdown-content {
+        margin-bottom: 0;
+        box-shadow: 0 0 0;
+    }
+
+    /* Show the dropdown menu on click */
+    .dropdown-content.active {
+        display: block;
+    }
+
+    /* Hide the dropdown content by default */
+    .dropdown .dropdown-content {
+        position: static;
+        display: none;
+    }
+
+    .dropdown-links {
+        background-color: #BB2F3D;
+        padding: 8px;
+    }
+
+    .dropdown a {
+        color: white;
+    }
+
+    #page-title {
+        font-size: 56pt;
+    }
+
+    .subtitle {
+        font-size: 22pt;
+    }
+
+    .section-title {
+        margin: 35px 75px;
+        font-size: 18pt;
+    }
+
+    p,
+    ul {
+        margin: 35px 75px;
+        font-size: large;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    #page-title {
+        font-size: 42pt;
+    }
+
+    .subtitle {
+        font-size: 16pt;
+    }
+
+    .section-title {
+        margin: 35px;
+    }
+
+    p,
+    ul {
+        margin: 35px;
+    }
+}
