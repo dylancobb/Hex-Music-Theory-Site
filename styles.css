@@ -97,7 +97,19 @@ footer {
     margin: 0px 20px 0px 5px;
 }
 
-.navbar a {
+.navbar > a:first-of-type {
+    padding: 0;
+    margin: 0;
+    background-color: #00000000 !important;
+}
+
+.navbar > a:hover:first-of-type {
+    padding: 0;
+    margin: 0;
+    background-color: #00000000 !important;
+}
+
+.navbar a, #menu-icon {
     padding: 10px 12px;
     text-decoration: none;
     color: white;
@@ -111,6 +123,7 @@ footer {
 }
 
 .navbar a:hover,
+#menu-icon:hover,
 .dropdown-toggle:hover,
 .dropdown-toggle:hover>a {
     background-color: #F1C6CA !important;
@@ -126,6 +139,7 @@ footer {
 }
 
 .navbar a:active,
+#menu-icon:active,
 .dropdown-toggle:active,
 .dropdown-toggle:active>a {
     background-color: #E28D95 !important;

@@ -21,22 +21,22 @@
 <body>
 	<div id="tinter" onclick="toggleMenu()"></div>
 	<nav class="navbar" id="nav-mobile">
-		<a id="menu-icon" onclick="toggleMenu()">
+		<div id="menu-icon" onclick="toggleMenu()">
 			<div class="bar1"></div>
 			<div class="bar2"></div>
 			<div class="bar3"></div>
-		</a>
-		<img src="images/logo.svg" class="logo" />
+		</div>
+		<a href="#"><img src="images/logo.svg" class="logo" /></a>
 	</nav>
 	<nav class="navbar" id="nav-desktop">
-		<img src="images/logo.svg" class="logo" />
+		<a href="#"><img src="images/logo.svg" class="logo" /></a>
 		<a href="#" onclick="closeMenu()">
 			<span class="current">Home</span>
 		</a>
-		<a href="#about" onclick="closeMenu()">Blog</a>
+		<a href="blog.html" onclick="closeMenu()">Blog</a>
 		<div class="dropdown">
 			<div class="dropdown-toggle">
-				<a href="#learning">Resources
+				<a href="javascript:;">Resources
 					<!-- dropdown caret (desktop display) -->
 					<svg width="12" height="6" version="1.1" viewBox="0 0 12 6" xmlns="http://www.w3.org/2000/svg"
 						class="caret">
@@ -53,13 +53,13 @@
 			<div class="dropdown-content">
 				<div class="dropdown-guard"></div>
 				<div class="dropdown-links">
-					<a href="#">Books</a>
-					<a href="#">Roadmap</a>
-					<a href="#">Reading List</a>
-					<a href="#">Melody, Voice Leading</a>
-					<a href="#">Form in Popular Music</a>
-					<a href="#">Musical Analyses</a>
-					<a href="#">Complex Counterpoint</a>
+					<a href="javascript:;" onclick="closeMenu()">Books</a>
+					<a href="javascript:;" onclick="closeMenu()">Roadmap</a>
+					<a href="javascript:;" onclick="closeMenu()">Reading List</a>
+					<a href="javascript:;" onclick="closeMenu()">Melody, Voice Leading</a>
+					<a href="javascript:;" onclick="closeMenu()">Form in Popular Music</a>
+					<a href="javascript:;" onclick="closeMenu()">Musical Analyses</a>
+					<a href="javascript:;" onclick="closeMenu()">Complex Counterpoint</a>
 				</div>
 			</div>
 		</div>
@@ -82,13 +82,13 @@
 			<div class="dropdown-content">
 				<div class="dropdown-guard"></div>
 				<div class="dropdown-links">
-					<a href="#">Shifting Counterpoint Calculator</a>
-					<a href="#">2x2 Canons App <span class="new-icon">NEW</span></a>
+					<a href="javascript:;" onclick="closeMenu()">Shifting Counterpoint Calculator</a>
+					<a href="2x2.html" onclick="closeMenu()">2x2 Canons App <span class="new-icon">NEW</span></a>
 				</div>
 			</div>
 		</div>
-		<a href="#projects" onclick="closeMenu()">Store</a>
-		<a href="#projects" onclick="closeMenu()">Contact</a>
+		<a href="javascript:;" onclick="closeMenu()">Store</a>
+		<a href="contact.html" onclick="closeMenu()">Contact</a>
 	</nav>
 	<header>
 		<h1 id="page-title">
