@@ -2,7 +2,7 @@
  * Menu Behaviour *============================================================
  ******************/
 
-let sideBar = false;
+let sideBar = false; // track whether sidebar menu is open or closed
 let canToggle = true; // block toggling while menu is currently closing
 const menu = document.getElementById("nav-desktop");
 const tinter = document.getElementById("tinter");
@@ -94,36 +94,52 @@ mediaQueryList.addEventListener('change', event => {
 
 const dropdown = document.getElementsByClassName("dropdown");
 
+// toggle dropdown menu open or closed
 function toggleDropdown() {
     const dropdownContent = this.querySelector(".dropdown-content");
     const chevron = this.querySelector(".chevron");
+    // if menu is open, close it
     if (dropdownContent.style.maxHeight) {
+        // reset heights
         dropdownContent.style.maxHeight = null;
+        dropdownContent.parentNode.style.minHeight = null;
+        // reset chevron
         if (chevron.classList.contains("chevron-rotate"))
             chevron.classList.toggle("chevron-rotate");
+    // if menu is closed, open it
     } else {
+        // close all dropdowns (in case any others are open)
         closeDropdowns();
+        // increase heights to animate menu opening
         dropdownContent.style.maxHeight = dropdownContent.scrollHeight + "px";
+        dropdownContent.parentNode.style.minHeight = 41.5 + dropdownContent.scrollHeight + "px";
+        // rotate chevron to show menu is open
         if (!chevron.classList.contains("chevron-rotate"))
             chevron.classList.toggle("chevron-rotate");
     }
 }
 
+// closes all open dropdown menus
 function closeDropdowns() {
     for (let i = 0; i < dropdown.length; i++) {
+        // reset height values
         const dropdownContent = dropdown[i].querySelector(".dropdown-content");
             dropdownContent.style.maxHeight = null;
+            dropdownContent.parentNode.style.minHeight = null;
+        // reset chevrons
         const chevron = dropdown[i].querySelector(".chevron");
         if (chevron.classList.contains("chevron-rotate"))
             chevron.classList.toggle("chevron-rotate");
     }
 }
 
+// opens menu on hover
 function toggleHover() {
     const dropdownContent = this.querySelector(".dropdown-content");
     dropdownContent.style.maxHeight = dropdownContent.scrollHeight + "px";
 }
 
+// closes menu when mouse leaves menu
 function closeHover() {
     this.querySelector(".dropdown-content").style.maxHeight = null;
 }

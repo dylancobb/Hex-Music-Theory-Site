@@ -10,6 +10,7 @@ body {
     font-family: "Open Sans", sans-serif;
     font-weight: normal;
     font-size: medium;
+    font-style: normal;
     cursor: default;
     margin: 0;
     padding: 0;
@@ -327,6 +328,7 @@ p {
     .dropdown {
         padding-bottom: 0px;
         min-height: 42px;
+        transition: min-height 0.2s;
     }
 
     .dropdown-guard {
@@ -377,5 +379,23 @@ p {
 
     p {
         margin: 35px;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    #page-title {
+        font-size: 36pt;
+    }
+
+    .subtitle {
+        font-size: 13.5pt;
+    }
+
+    .section-title {
+        font-size: 16pt;
+    }
+
+    p {
+        font-size: normal;
     }
 }
