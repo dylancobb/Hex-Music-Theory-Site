@@ -135,7 +135,8 @@ footer {
     color: black !important;
 }
 
-.navbar a:hover .current {
+.navbar a:hover .current,
+.dropdown-toggle:hover .current {
     border-color: black;
 }
 
@@ -151,7 +152,8 @@ footer {
     color: white !important;
 }
 
-.navbar a:active .current {
+.navbar a:active .current,
+.dropdown-toggle:active .current {
     border-color: white;
 }
 
