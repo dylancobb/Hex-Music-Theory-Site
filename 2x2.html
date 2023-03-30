@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Basic Metadata -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hex Music Theory</title>
+	<meta name="description" content="Music theory made accessible.">
+	<meta name="author" content="Hex">
+	<!-- Favicons and Touch Icons -->
+	<link rel="icon" href="images/favicon.ico">
+	<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<!-- Stylesheets and Scripts -->
+    <link rel="stylesheet" href="css/2x2.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans:400,500,700">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Code Pro">
+</head>
+
+<body>
+	<div id="tinter" onclick="toggleMenu()"></div>
+	<nav class="navbar" id="nav-mobile">
+		<div id="menu-icon" onclick="toggleMenu()">
+			<div class="bar1"></div>
+			<div class="bar2"></div>
+			<div class="bar3"></div>
+		</div>
+		<a href="index.html"><img src="images/logo.svg" class="logo" /></a>
+	</nav>
+	<nav class="navbar" id="nav-desktop">
+		<a href="index.html"><img src="images/logo.svg" class="logo" /></a>
+		<a href="index.html" onclick="closeMenu()">
+			<span>Home</span>
+		</a>
+		<a href="blog.html" onclick="closeMenu()">Blog</a>
+		<div class="dropdown">
+			<div class="dropdown-toggle">
+				<a href="javascript:;">Resources
+					<!-- dropdown caret (desktop display) -->
+					<svg width="12" height="6" version="1.1" viewBox="0 0 12 6" xmlns="http://www.w3.org/2000/svg"
+						class="caret">
+						<path d="m0 0 6 6 6-6z" fill="currentColor" />
+					</svg>
+				</a>
+				<!-- dropdown chevron (mobile display) -->
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+					stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+					class="chevron">
+					<polyline points="9 18 15 12 9 6"></polyline>
+				</svg>
+			</div>
+			<div class="dropdown-content">
+				<div class="dropdown-guard"></div>
+				<div class="dropdown-links">
+					<a href="javascript:;" onclick="closeMenu()">Books</a>
+					<a href="javascript:;" onclick="closeMenu()">Roadmap</a>
+					<a href="javascript:;" onclick="closeMenu()">Reading List</a>
+					<a href="javascript:;" onclick="closeMenu()">Melody, Voice Leading</a>
+					<a href="javascript:;" onclick="closeMenu()">Form in Popular Music</a>
+					<a href="javascript:;" onclick="closeMenu()">Musical Analyses</a>
+					<a href="javascript:;" onclick="closeMenu()">Complex Counterpoint</a>
+				</div>
+			</div>
+		</div>
+		<div class="dropdown">
+			<div class="dropdown-toggle">
+				<a href="javascript:;">
+                    <span class="current">Tools</span>
+					<!-- dropdown caret (desktop display) -->
+					<svg width="12" height="6" version="1.1" viewBox="0 0 12 6" xmlns="http://www.w3.org/2000/svg"
+						class="caret">
+						<path d="m0 0 6 6 6-6z" fill="currentColor" />
+					</svg>
+				</a>
+				<!-- dropdown chevron (mobile display) -->
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+					stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+					class="chevron">
+					<polyline points="9 18 15 12 9 6"></polyline>
+				</svg>
+			</div>
+			<div class="dropdown-content">
+				<div class="dropdown-guard"></div>
+				<div class="dropdown-links">
+					<a href="javascript:;" onclick="closeMenu()">Shifting Counterpoint Calculator</a>
+					<a href="2x2.html" onclick="closeMenu()"><span class="current">2x2 Canons App</span> <span class="new-icon">NEW</span></a>
+				</div>
+			</div>
+		</div>
+		<a href="javascript:;" onclick="closeMenu()">Store</a>
+		<a href="contact.html" onclick="closeMenu()">Contact</a>
+	</nav>
+	<header>
+		<h1 id="app-title">
+			2x2 Canonic Sequence Explorer
+		</h1>
+	</header>
+	<main>
+        <div id="app-container">
+            <div id="filter-list">
+                <div id="filter-select">
+                    <p class="filter-button" id="jv-toggle" onclick="showJv()"><em>Jv</em></p>
+                    <p class="filter-button" id="model-toggle" onclick="showModel()">Head</p>
+                    <p class="filter-button" id="entry-toggle" onclick="showEntry()">Entry</p>
+                    <p class="filter-button" id="vp-toggle" onclick="showVP()">VP</p>
+                    <p class="filter-button" id="seq-toggle" onclick="showSeq()">Seq.</p>
+                    <p class="narrow-button-dark" id="filter-reset" onclick="filterReset()">AC</p>
+                </div>
+                <div id="jv-filter">
+                    <span class="filter-label"><em>Jv</em></span>
+                    <div id="jv-buttons">
+                        <p class="rec-button-dark" id="jv-none" onclick="jvNone()">None</p>
+                        <p class="square-button-dark" id="jv-first-type" onclick="jvFirstType()"><span class="super-adjust"><sup>1</sup><em>Jv</em></span></p>
+                        <p class="square-button" id="jv-0" onclick="jvToggle(0)">0</p>
+                        <p class="square-button" id="jv-1" onclick="jvToggle(1)">-1</p>
+                        <p class="square-button" id="jv-2" onclick="jvToggle(2)">-2</p>
+                        <p class="square-button" id="jv-3" onclick="jvToggle(3)">-3</p>
+                        <p class="square-button" id="jv-4" onclick="jvToggle(4)">-4</p>
+                        <p class="square-button" id="jv-5" onclick="jvToggle(5)">-5</p>
+                        <p class="square-button" id="jv-6" onclick="jvToggle(6)">-6</p>
+                        <p class="rec-button-dark" id="jv-all" onclick="jvAll()">All</p>
+                        <p class="square-button-dark" id="jv-second-type" onclick="jvSecondType(0)"><span class="super-adjust"><sup>2</sup><em>Jv</em></span></p>
+                        <p class="square-button" id="jv-7" onclick="jvToggle(7)">-7</p>
+                        <p class="square-button" id="jv-8" onclick="jvToggle(8)">-8</p>
+                        <p class="square-button" id="jv-9" onclick="jvToggle(9)">-9</p>
+                        <p class="square-button" id="jv-10" onclick="jvToggle(10)">-10</p>
+                        <p class="square-button" id="jv-11" onclick="jvToggle(11)">-11</p>
+                        <p class="square-button" id="jv-12" onclick="jvToggle(12)">-12</p>
+                        <p class="square-button" id="jv-13" onclick="jvToggle(13)">-13</p>
+                    </div>
+                </div>
+                <div id="entry-filter">
+                    <span class="filter-label">Entry</span>
+                    <div id="entry-buttons">
+                        <p class="rec-button-dark" id="entry-none" onclick="entryNone()">None</p>
+                        <p class="square-button tall-entry" id="entry-0" onclick="entryToggle(0)">→0</p>
+                        <p class="square-button" id="entry-1" onclick="entryToggle(1)">↗1</p>
+                        <p class="square-button" id="entry-2" onclick="entryToggle(2)">↗2</p>
+                        <p class="square-button" id="entry-3" onclick="entryToggle(3)">↗3</p>
+                        <p class="square-button" id="entry-4" onclick="entryToggle(4)">↗4</p>
+                        <p class="square-button" id="entry-5" onclick="entryToggle(5)">↗5</p>
+                        <p class="square-button" id="entry-6" onclick="entryToggle(6)">↗6</p>
+                        <p class="square-button" id="entry-7" onclick="entryToggle(7)">↗7</p>
+                        <p class="square-button" id="entry-8" onclick="entryToggle(8)">↗8</p>
+                        <p class="square-button" id="entry-9" onclick="entryToggle(9)">↗9</p>
+                        <p class="square-button wide-entry" id="entry-10" onclick="entryToggle(10)">↗10</p>
+                        <p class="square-button wide-entry" id="entry-11" onclick="entryToggle(11)">↗11</p>
+                        <p class="square-button wide-entry" id="entry-12" onclick="entryToggle(12)">↗12</p>
+                        <p class="rec-button-dark" id="entry-all" onclick="entryAll()">All</p>
+                        <p class="square-button" id="entry-m1" onclick="entryToggle(-1)">↘1</p>
+                        <p class="square-button" id="entry-m2" onclick="entryToggle(-2)">↘2</p>
+                        <p class="square-button" id="entry-m3" onclick="entryToggle(-3)">↘3</p>
+                        <p class="square-button" id="entry-m4" onclick="entryToggle(-4)">↘4</p>
+                        <p class="square-button" id="entry-m5" onclick="entryToggle(-5)">↘5</p>
+                        <p class="square-button" id="entry-m6" onclick="entryToggle(-6)">↘6</p>
+                        <p class="square-button" id="entry-m7" onclick="entryToggle(-7)">↘7</p>
+                        <p class="square-button" id="entry-m8" onclick="entryToggle(-8)">↘8</p>
+                        <p class="square-button" id="entry-m9" onclick="entryToggle(-9)">↘9</p>
+                        <p class="square-button wide-entry" id="entry-m10" onclick="entryToggle(-10)">↘10</p>
+                        <p class="square-button wide-entry" id="entry-m11" onclick="entryToggle(-11)">↘11</p>
+                        <p class="square-button wide-entry" id="entry-m12" onclick="entryToggle(-12)">↘12</p>
+                    </div>
+                </div>
+                <div id="model-filter">
+                    <span class="filter-label">Head</span>
+                    <div id="model-buttons">
+                        <p class="rec-button-dark" id="model-none" onclick="modelNone()">None</p>
+                        <p class="rec-button" id="model-inc" onclick="modelInc()">Inc.</p>
+                        <p class="square-button tall-model" id="model-0" onclick="modelToggle(0)">S</p>
+                        <p class="square-button" id="model-1" onclick="modelToggle(1)">U1</p>
+                        <p class="square-button" id="model-2" onclick="modelToggle(2)">U2</p>
+                        <p class="square-button" id="model-3" onclick="modelToggle(3)">U3</p>
+                        <p class="square-button" id="model-4" onclick="modelToggle(4)">U4</p>
+                        <p class="square-button" id="model-5" onclick="modelToggle(5)">U5</p>
+                        <p class="square-button" id="model-7" onclick="modelToggle(7)">U7</p>
+                        <p class="rec-button-dark" id="model-all" onclick="modelAll()">All</p>
+                        <p class="rec-button" id="model-ex" onclick="modelEx()">Excl.</p>
+                        <p class="square-button" id="model-m1" onclick="modelToggle(-1)">D1</p>
+                        <p class="square-button" id="model-m2" onclick="modelToggle(-2)">D2</p>
+                        <p class="square-button" id="model-m3" onclick="modelToggle(-3)">D3</p>
+                        <p class="square-button" id="model-m4" onclick="modelToggle(-4)">D4</p>
+                        <p class="square-button" id="model-m5" onclick="modelToggle(-5)">D5</p>
+                        <p class="square-button" id="model-m7" onclick="modelToggle(-7)">D7</p>
+                    </div>
+                </div>
+                <div id="vp-filter">
+                    <span class="filter-label">Voice Pairs:</span>
+                    <div id="vp-buttons">
+                        <p class="vp-button" id="vp-agnostic" onclick="vpAgnostic()">Agnostic</p>
+                        <p class="vp-button" id="vp-all" onclick="vpAll()">All</p>
+                        <p class="vp-button" id="vp-not-outer" onclick="vpNotOuter()">Not OVP</p>
+                        <p class="vp-button" id="vp-upper" onclick="vpUpper()">UVP Only</p>
+                    </div>
+                </div>
+                <div id="seq-filter">
+                    <span class="filter-label">Sequences:</span>
+                    <div id="seq-buttons">
+                        <div id="input-boxes">
+                            <input type="number" id="first-seq-box" name="first-seq-box">
+                            <input type="number" id="second-seq-box" name="second-seq-box">
+                            <p class="add-button" id="seq-add" onclick="addSeq()">Add</p>
+                        </div>
+                        <div id="seq-list"></div>
+                        <div id="extra-boxes">
+                            <p class="square-button-dark" id="add-stars" onclick="addStars()">★</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="square-button-dark" id="no-seqs" onclick="clearSeqs()" width="24"
+                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="3 6 5 6 21 6"></polyline>
+                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                <line x1="10" y1="11" x2="10" y2="17"></line>
+                                <line x1="14" y1="11" x2="14" y2="17"></line>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="content">
+                <div id="left-col">
+                    <div id="misc-menu">
+                        <p class="misc-button" id="rand-button" onclick="patRandom()">Rand.</p>
+                        <p class="misc-button" id="help-button" onclick="getHelp()">Help</p>
+                    </div>
+                    <div id="pat-num"><span id="counter"></span>Patterns</div>
+                    <div id="pattern-list"></div>
+                </div>
+                <div id="info">
+                    <div id="pattern-data">
+                        <h2 id="pattern-name">Pattern Name</h2>
+                        <span class="param param1">
+                            <p class="param-name">
+                                <span class="vspace"></span>Elaborates at:
+                                <span id="jv"></span>
+                            </p>
+                        </span>
+                        <span class="param param2">
+                            <p class="param-name">
+                                <span class="vspace"></span>Entry Intervals:
+                                <span id="entry"></span>
+                            </p>
+                        </span>
+                        <span class="param param3">
+                            <p class="param-name">
+                                <span class="vspace"></span>Alias:
+                                <span id="alias"></span>
+                            </p>
+                        </span>
+                        <span class="param param4">
+                            <p class="param-name">
+                                <span class="vspace"></span>Retrograde:
+                                <span id="retro"></span>
+                            </p>
+                        </span>
+                        <span class="param param5">
+                            <p class="param-name">
+                                <span class="vspace"></span>Note Swap:
+                                <span id="nswap"></span>
+                            </p>
+                        </span>
+                        <span class="param param6">
+                            <p class="param-name">
+                                <span class="vspace"></span>Octave Swap:
+                                <span id="oswap"></span>
+                            </p>
+                        </span>
+                        <span class="param param7">
+                            <p class="param-name">
+                                <span class="vspace"></span>Root Sequence:
+                                <span id="seqs"></span>
+                            </p>
+                        </span>
+                        <span class="param warning" id="warning-container"></span>
+                    </div>
+                    <canvas id="myCanvas"></canvas>
+                    <div id="play-container"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+	<footer>
+		<p>Gusic 🤓</p>
+	</footer>
+
+	<script src="js/scripts.js"></script>
+    <script src="js/2x2.js"></script>
+</body>
+
+</html>
